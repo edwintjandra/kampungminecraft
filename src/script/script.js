@@ -1,3 +1,9 @@
+import $ from "jquery";
+import ClipboardJS from "clipboard";
+import Flickity from 'flickity';
+ 
+import "../style/style.css";
+
 function tabfunction() {
 
     var tabs=document.querySelectorAll(".tab");

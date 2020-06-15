@@ -1,3 +1,6 @@
+@import url("./lib/flickty.css");
+@import url("./lib/baloon.css");
+
 :root {
     --main-color:#ddd;
     --main-bg-color:rgb(48, 47, 47);
