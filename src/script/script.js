@@ -8,6 +8,12 @@ import "../style/style.css";
 
 jQueryBridget( 'flickity', Flickity, $ );
 
+
+$(window).on("load",function() {
+    $("body").css("visibility","visible")
+    console.log("loadded");
+})
+
 function tabfunction() {
 
     var tabs=document.querySelectorAll(".tab");
@@ -188,6 +194,7 @@ videoSection();
 clipboard();
 headerTop();
 flicktyCarousel();
+ 
  
 
  
