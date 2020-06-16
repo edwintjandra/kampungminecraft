@@ -1,8 +1,12 @@
 import $ from "jquery";
 import ClipboardJS from "clipboard";
-import Flickity from 'flickity';
+import jQueryBridget from "jquery-bridget";
+import Flickity from "flickity";
  
 import "../style/style.css";
+
+
+jQueryBridget( 'flickity', Flickity, $ );
 
 function tabfunction() {
 
