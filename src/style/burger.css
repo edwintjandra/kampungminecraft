@@ -1,0 +1,38 @@
+/* burger */
+
+.header-top .burger {
+    width:48.5px;
+    padding:5px;
+    padding-top:24px;
+
+    position: absolute;
+    z-index:5;
+    right:4%;
+}
+
+div.burger div {
+    background-color: #ddd;
+    height: 5px;
+    margin:5px;
+    border-radius: 4px;
+    
+    transform-origin: 0 0;
+    transition: transform .45s; 
+}
+
+.header-top .burger {
+    display: none;
+}
+
+.burger-animation > div:nth-child(1) {
+     transform:rotate(45deg) translate(0, -6px);
+} 
+
+.burger-animation > div:nth-child(2) {
+   opacity: 0;
+}
+
+.burger-animation > div:nth-child(3) {
+   transform: rotate(-45deg);
+   
+}

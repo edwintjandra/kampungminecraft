@@ -1,0 +1,58 @@
+@import url("./lib/baloon.css");
+@import url("./lib/flickty.css");
+
+/* flickty */
+
+.flickity-page-dots .dot {
+    background: var(--secondary-bg-color);
+  }
+
+  .flickity-page-dots .dot.is-selected {
+    background: #ddd;
+  }
+
+
+  .main-cards {
+    margin:10px auto  48vh;
+    width: 85%;
+    
+}
+
+.rank-header {
+    margin-top:100px;
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+/* card-cell */
+.card-cell {
+    width: 28%;
+    padding: 16px;
+    margin-right: 10px;
+    background: var(--secondary-bg-color);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     
+  }
+
+ 
+.card-cell .card-image {
+    width: 48%;
+}  
+
+.card-cell .btn {
+    align-self: stretch;
+}
+
+
+
+
+/* tooltip custom */
+
+.tooltip-main {
+    --balloon-color: var(--main-bg-color);
+    --balloon-move: 55px;
+}

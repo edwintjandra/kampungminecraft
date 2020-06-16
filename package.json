@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "build": "npx webpack --config webpack.config.js"
+    "build": "npx webpack --config webpack.config.js",
+    "combine":"onchange \"src/**\" -- concurrently \"npm:build\"  \"npm start\" "
   },
   "author": "edwin",
   "license": "ISC",
@@ -20,7 +21,9 @@
     "mongoose": "^5.9.18"
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "css-loader": "^3.6.0",
+    "onchange": "^7.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
