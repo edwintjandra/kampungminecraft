@@ -37,6 +37,7 @@ div.tab {
 
 .tab .tab-icon{
    font-size:80px;
+   font-size: 80px;
    font-size: 5rem;
    margin-bottom: 10px;
 }
@@ -90,6 +91,7 @@ div.description p.description-lead {
 div.description ul {
     list-style: none;
     font-size:38.4px;
+    font-size: 38.4px;
     font-size:2.4rem;
 }
 
@@ -103,6 +105,7 @@ div.description ul {
 
 #tab-2-content h3 {
     font-size:32px;
+    font-size: 32px;
     font-size: 2rem;
 }
 
@@ -117,6 +120,7 @@ div.description ul {
     height: 65vh;
 
     font-size:22.4px;
+    font-size: 22.4px;
     font-size: 1.4rem;
     color:white;
     border-collapse: collapse;
@@ -140,6 +144,7 @@ div.description ul {
 #tab-3-content h3 {
     color:white;
     font-size:28.8px;
+    font-size: 28.8px;
     font-size: 1.8rem;
 }
 
@@ -155,6 +160,7 @@ div.description ul {
 
 .promotion{
    font-size:39.2px;
+   font-size: 39.2px;
    font-size: 2.45rem;
    margin-bottom: 10px;
    color:white;
@@ -171,6 +177,7 @@ div.description ul {
 
     text-align: center;
     font-size:16px;
+    font-size: 16px;
     font-size: 1rem;
 }
 
@@ -186,6 +193,7 @@ div.description ul {
     padding: 10px;
     box-sizing: border-box;
     font-size:17.6px;
+    font-size: 17.6px;
     font-size: 1.1rem;
 }
 

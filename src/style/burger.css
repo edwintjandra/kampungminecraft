@@ -16,8 +16,13 @@ div.burger div {
     margin:5px;
     border-radius: 4px;
     
-    transform-origin: 0 0;
-    transition: transform .45s; 
+    -webkit-transform-origin: 0 0;
+    
+            transform-origin: 0 0;
+    -webkit-transition:-webkit-transform .45s;
+    transition:-webkit-transform .45s;
+    transition:transform .45s;
+    transition: transform .45s, -webkit-transform .45s; 
 }
 
 .header-top .burger {
@@ -25,14 +30,17 @@ div.burger div {
 }
 
 .burger-animation > div:nth-child(1) {
-     transform:rotate(45deg) translate(0, -6px);
+     -webkit-transform:rotate(45deg) translate(0, -6px);
+             transform:rotate(45deg) translate(0, -6px);
 } 
 
 .burger-animation > div:nth-child(2) {
    opacity: 0;
+   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 
 .burger-animation > div:nth-child(3) {
-   transform: rotate(-45deg);
+   -webkit-transform: rotate(-45deg);
+           transform: rotate(-45deg);
    
 }

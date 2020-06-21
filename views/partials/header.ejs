@@ -14,3 +14,39 @@
 
 </head>
 <body style="visibility:hidden ">
+
+
+    <div class="header-top">
+        <a href="/" class="header-top-brand">   Kampung Smp </a>
+         
+        <ul class="header-top-lists">
+            <li><a href="/about">about</a></li>
+
+            <% if(user) { %>
+                <li style="border-bottom: 2px solid #ddd; padding-bottom:1px;"><a href="#"><%= user.username %> </a></li>
+                <li> <a href="/logout" class="btn btn-login">logout   </a> </li>
+            <% }else { %>
+                <li> <a href="/login" class="btn btn-login">login    </a> </li>
+            <% } %>
+            
+            
+        </ul>
+
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    
+    </div>    
+
+
+    <div class="header-top-fixed">
+         
+        <ul>
+            <li>shop</li>
+            <li>forum</li>
+            <li>blogs</li>
+        </ul>
+              
+    </div>

@@ -1,0 +1,16 @@
+.form-container {
+    width:65%;
+    margin:10px auto;
+    background-color: #269aff;
+    border:solid black 1px;
+    border-radius: 5px;
+
+    box-shadow: 5px 5px 4px rgba(0,0,0,0.6);
+    color:white !important;
+    padding:25px;
+}
+
+.register-link {
+    border-bottom:blue solid 1px; 
+    padding-bottom:2px; 
+}

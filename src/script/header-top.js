@@ -1,13 +1,12 @@
 import $ from "jquery";
+var burger=$(".burger")
+var headerLists=$(".header-top-lists");
+var lists=document.querySelectorAll(".header-top-lists li");
+var headerFixed=document.querySelector(".header-top-fixed");
 
 export function headerTop() {
-    var burger=$(".burger")
-    var headerLists=$(".header-top-lists");
-    var lists=document.querySelectorAll(".header-top-lists li");
-    var headerFixed=document.querySelector(".header-top-fixed");
-
-   
-
+    
+   if(burger&&headerLists&&lists&&headerFixed){
     burger.click(function(){
           
         headerLists.toggleClass("header-lists-active");
@@ -44,4 +43,8 @@ export function headerTop() {
  
        
     })  
+   }
+   
+
+    
 }

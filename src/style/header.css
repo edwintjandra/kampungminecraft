@@ -1,13 +1,14 @@
 /* header */
 
 header {
-    height: 100vh;
+    height: 82.8vh;
 }
 
 /* header-top */
 
 .header-top {  
     font-size:19.2px;  
+    font-size: 19.2px;  
     font-size:1.2rem;
     height: 14vh;
 
@@ -23,6 +24,12 @@ header {
     -webkit-transform: translate(-50%,-50%) ;
             transform: translate(-50%,-50%) ;
  
+}
+
+a.header-top-brand {
+    color:#ddd;
+    font-size: 1.17em;
+    font-weight: bold;
 }
 
 .header-top-brand:hover {
@@ -46,23 +53,21 @@ header {
 
    display:flex;
    -ms-flex-pack: distribute;
-       justify-content: space-around;
-
-
-   transition:transform .5s ease-out;    
+   -webkit-box-pack: center;
+           justify-content: center;
+   
+   -webkit-transition: -webkit-transform .5s ease-out;
+   
+   transition: -webkit-transform .5s ease-out;
+   
+   transition: transform .5s ease-out;
+   
+   transition:transform .5s ease-out, -webkit-transform .5s ease-out;    
 
 }
 
-.header-top-lists li:nth-of-type(1):hover {
-    color:white;
-}
-
-.header-top-lists li:nth-of-type(2):hover {
-    color:white;
-}
-
-.header-top-lists li:nth-of-type(3):hover {
-    color:white;
+.header-top-lists li {
+    margin: 25px;
 }
 
 /* header-top-fixed */
@@ -86,9 +91,16 @@ header {
     height: 100%;
     list-style: none;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .header-top-fixed.active {
@@ -170,7 +182,7 @@ ul.background-image {
     
 }
 
-ul.background-image::after {
+ul.background-image:after {
     content:"";
     width:100vw;
     height: 100vh;
@@ -262,14 +274,54 @@ ul.background-image li:nth-of-type(5) {
 
 
 
-@keyframes header-top-animation {
+@-webkit-keyframes header-top-animation {
     from {
         opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     }
 
     to {
         opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     }
+}
+
+
+
+
+
+@keyframes header-top-animation {
+    from {
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+
+    to {
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+}
+
+
+@-webkit-keyframes backgroundAnimation {
+
+    0% {
+        opacity:0;
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+
+    20% {
+        opacity:1;
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+
+    30% {
+        opacity: 1;
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+
+
+
 }
 
 
