@@ -1,14 +1,13 @@
 var express                 =require('express'),
     bodyParser              =require('body-parser'),
     mongoose                =require('mongoose'),
-    pasport                 =require('passport'),
+    passport                =require('passport'),
     localStrategy           =require("passport-local"),
     passportLocalMongoose   =require("passport-local-mongoose"),
     expressSession          =require("express-session"),
     app                     =express();
 
 var User=require('./models/user');    
-const passport = require('passport');
 
     
 mongoose.connect('mongodb://localhost:27017/kampungmc', {useNewUrlParser: true, useUnifiedTopology: true});
