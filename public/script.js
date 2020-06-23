@@ -49,9 +49,9 @@ function headerTop() {
     var burger=$(".burger")
     var headerLists=$(".header-top-lists");
     var lists=document.querySelectorAll(".header-top-lists li");
-    var headerFixed=document.querySelector(".header-top-fixed");
      
-    if(burger&&headerLists&&lists&&headerFixed){
+     
+    if(burger&&headerLists&&lists){
      burger.click(function(){
            
          headerLists.toggleClass("header-lists-active");
@@ -78,14 +78,6 @@ function headerTop() {
          lists.forEach(function(item){
              item.style.animation="";
          })
- 
-         
-          if($(this).scrollTop() >  140 ) {
-             headerFixed.classList.add("active")  
-          }else {
-              headerFixed.classList.remove("active")
-          }
-  
         
      })  
     }

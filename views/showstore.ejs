@@ -1,0 +1,21 @@
+<%- include("./partials/header") %>
+
+
+<div class="showstore-container">
+    <h1><%= store.name %></h1>
+    <img src="<%= store.image %>" alt="">
+
+    <h4 class="showstore-info"> <span>RP.<%= store.price %></span>  <span><%= store.date.getDate() + "-" + (store.date.getMonth()+1) + "-" +store.date.getFullYear() %></span> </h4>
+    <p>
+        <%= store.description %>
+    </p>
+    
+   
+    <a href="#" class="btn btn-secondary"> BUY!</a>
+ 
+   
+
+</div>
+
+
+<%- include("./partials/footer") %>

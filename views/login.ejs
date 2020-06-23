@@ -1,7 +1,7 @@
 <%- include("./partials/header") %>
 
 <div class="form-container">
-    <h1>Login</h1>
+    <h1>Log  in</h1>
 
     <form action="/login" method="POST">
         <label for="username">username</label>
@@ -10,10 +10,10 @@
         <label for="password">password</label>
         <input id="password" type="password" name="password" placeholder="pass123">
     
-        <button>submit</button>
+        <button class="btn btn-primary">submit</button>
     </form>
     
-    <a class="register-link" href="/register">don't have an account?</a>
+    <p>don't have an account?   <a class="register-link" href="/register">Register one here!</a></p>
 </div>
 
 

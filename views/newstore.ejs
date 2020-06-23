@@ -1,0 +1,20 @@
+<%- include("./partials/header") %>
+
+<form action="/store" method="POST">
+    <label for="name">name</label>
+    <input type="text" name="store[name]" id="name">
+
+    <label for="image">image</label>
+    <input type="text" name="store[image]" id="image">
+
+    <label for="price">price</label>
+    <input type="text" name="store[price]" id="price">
+
+    <label for="description">description</label>
+    <textarea name="store[description]" id="description" cols="30" rows="10"></textarea>
+
+    <button>submit</button>
+</form>
+
+
+<%- include("./partials/footer") %>

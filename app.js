@@ -8,6 +8,8 @@ var express                 =require('express'),
     app                     =express();
 
 var User=require('./models/user');    
+var Store=require('./models/store');
+const store = require('./models/store');
 
     
 mongoose.connect('mongodb://localhost:27017/kampungmc', {useNewUrlParser: true, useUnifiedTopology: true});
@@ -76,6 +78,52 @@ app.get('/logout',(req,res)=>{
     
     res.redirect('/');
 })
+
+//store route
+
+app.get('/store',(req,res)=>{
+
+    store.find({},(err,stores)=>{
+        if(err){
+            console.log(err);
+            res.redirect('/');
+        }else {
+            res.render('store',{stores:stores})
+        }
+    })
+    
+})
+
+app.get('/store/new',(req,res)=>{
+    res.render('newstore')
+})
+
+app.post('/store',(req,res)=>{
+
+    store.create(req.body.store,(err,store)=>{
+        if(err) {
+            console.log(err);
+            res.redirect('/');
+        } else {
+            res.redirect('/store');
+        }
+
+    })
+})
+
+app.get('/store/:id',(req,res)=>{
+    store.findById(req.params.id,(err,store)=>{
+
+        if(err){
+            console.log(err);
+            res.redirect('/store');
+        }else {
+            res.render('showstore.ejs',{store:store});
+        }
+
+    })
+})
+
 
 
 app.listen(3000, ()=>{
