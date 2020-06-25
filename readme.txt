@@ -1,4 +1,5 @@
-version:alpha
-contributor:edwintj
-mode:production
-description:sudah di minified, register dan login page belom di style. Masih banyak route yang kurang .
+=======
+mode:development
+removing:src/
+description:supaya bisa lebih cepet
+>>>>>>> starting development area
