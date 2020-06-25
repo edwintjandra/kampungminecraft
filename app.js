@@ -126,6 +126,12 @@ app.get('/store/:id',(req,res)=>{
 
 
 
+
+app.get('*',(req,res)=>{
+
+    res.send("under construction....")
+})
+
 app.listen(3000, ()=>{
     console.log('server started');
 })

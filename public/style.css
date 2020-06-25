@@ -42,7 +42,35 @@ a {
 
 
 /* footer */
+
 footer {
+   background-color: #ddd;
+   height: 68vh;
+
+   display: flex;
+   flex-direction: column;
+ 
+}
+
+footer .social-media {
+    margin:50px auto;
+    text-align: center;
+    color:var(--secondary-bg-color);
+}
+
+.social-media h3 {
+    font-size: 3.5rem;
+}
+
+.links a {
+    color:inherit;
+    font-size: 2rem;
+}
+
+footer .footer-sentence{
+    color:#ddd;
+    justify-self: flex-end;  
+
     text-align: center;
     height: 10vh;
     background-color: var(--secondary-bg-color);
@@ -51,6 +79,9 @@ footer {
     
     display: grid;
     place-content: center;
+
+    margin-top:auto;
+ 
 }
 
 /* header */
@@ -793,7 +824,7 @@ hr.pembatas {
     margin:90px auto;
     padding:10px;
     box-sizing: border-box;
-
+     
     box-shadow: 8px 10px 65px rgba(0,0,0,.45);
 
     display:grid;
@@ -825,6 +856,11 @@ hr.pembatas {
 
 .blogs-side1,.blogs-side2 {
     padding-top:165px;
+}
+
+.blogs span {
+    display: block;
+    margin-bottom: 45px;
 }
 
 .blogs-header {
@@ -906,7 +942,7 @@ hr.pembatas {
 .store-cards {
     display: grid;
     padding-top:45px;
-    grid-template-columns: repeat(auto-fill,minmax(28%,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
 
     
     justify-content: center;
@@ -968,6 +1004,8 @@ hr.pembatas {
      
     padding:15px;
     color:#ddd;
+
+    
      
 }
 
@@ -1006,6 +1044,10 @@ hr.pembatas {
    border:solid black 1.5px;
    border-radius:8px;
    margin-bottom:65px;
+
+   background-color:#ddd;
+   color:var(--secondary-bg-color);
+   text-align:left;
 }
 
 
@@ -1159,7 +1201,7 @@ section.rank-promotion h2 {
     font-size: 2rem;
 }
 
-.form-container input {
+.form-container input,.form-container textarea {
     width: 100%;
     padding:12px;
     display: block;
@@ -1355,8 +1397,69 @@ section.rank-promotion h2 {
     .creeper-awman {
         width:20%;
     }
-    
 
+    /* blogs */
+
+    .blogs {
+        width: 90%;
+
+        grid-template-areas:
+            "header header header"
+            " side1 side1 side1"
+            " side2 side2 side2" ;
+           
+    }
+
+    .blogs-header,.blogs-side1,.blogs-side2 {
+        padding-top:185px;
+    }
+
+
+    /* store-container */
+    
+    .store-container {
+        width:90%;
+    }
+
+    .store-navigation {
+       display: none;
+    }
+
+    /* newyear-promo */
+
+    .newyear-promo {
+        padding:25px;
+    }
+    
+    .promotion-image {
+       display: none;
+    }
+
+    .newyear-promo p:not(.date) {
+        display: none;
+    }
+    
+    .newyear-promo h2 {
+      position: static;
+    }
+    
+    .newyear-promo .date {
+      position: static;
+    }
+
+
+    /* showstore */
+    .showstore-container {
+        width:80%;
+    }
+    
+    .showstore-container img {
+        width:50%;
+    }
+
+    .showstore-container p {
+        padding:38px;
+     }
     
  }
 
@@ -1553,3 +1656,13 @@ section.rank-promotion h2 {
  }
 
 
+
+
+
+
+
+
+
+
+
+ 

@@ -6,6 +6,7 @@ $(window).on("load",function() {
 function flicktyCarousel() {
     
     if($('.main-cards')) {
+        
         var manyCells= ( ($(window).width())<590  )?1:2;
 
         $('.main-cards').flickity({
@@ -191,17 +192,13 @@ function videoSection() {
     
 }
 
-
-
-
-
-
- 
 tabfunction();
 videoSection();
 clipboard();
 headerTop();
 flicktyCarousel();
+
+ 
  
  
 
