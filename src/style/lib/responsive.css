@@ -1,0 +1,380 @@
+/* responsive breakpoints */
+
+@media screen and (min-width:1175px) {
+    .video-container .buttons {
+        display: block;
+     }
+     
+ }
+ 
+ @media screen and (max-width:976px) {
+     /* header-top*/
+
+     .header-top-lists {
+        background-color: rgba(0,0,0,0.9);
+        color:white;
+        width:100%;
+        height: 100vh;
+        top:0;
+        right:0;
+        
+        -webkit-transform:translate(-100%,0);
+        
+                transform:translate(-100%,0);
+     
+        
+        -webkit-box-orient: vertical;
+     
+        
+        -webkit-box-direction: normal;
+     
+        
+            -ms-flex-direction: column;
+     
+        
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                    -ms-grid-row-align: center;
+                align-items: center;
+                justify-content: center;
+     
+     }
+
+     .header-lists-active {
+         -webkit-transform: translate(0,0);
+                 transform: translate(0,0);
+     }
+
+     .header-top .burger {
+          
+        display: block;
+    }
+
+    .header-top-lists li {
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+
+    /* haeder-content */
+    .content-image {
+        width:90%;
+    }
+
+    .content-container .lead {
+        font-size: 0.75rem;
+    }
+
+
+    /* tabs */
+
+    div.tabs {
+        padding:0 50px;
+         
+    }
+
+    /* promotion span */
+    .promotion span {
+        display: none;
+    }
+
+    /* tab-1-content */
+    div.description ul {
+        list-style: none;
+        font-size:2rem;
+    }
+
+    /* tab-2-content*/
+    #tab-2-content {
+        width:100%;
+        margin:20px auto;
+        text-align: center;
+    }
+
+    /* video-container */
+
+    .video-container iframe {
+        width:588px;
+        height:480px;
+        display: none;
+    }
+
+    /* */
+
+    .card-cell {
+        width: 40%;  
+    }
+    
+    /* minigame */
+
+     .minigame {
+        background-color: #ddd;
+        padding: 10px 50px;
+    }
+
+    .community-container {
+        display: flex;
+        width: 100%;
+        margin:0 auto 128px;
+    }
+
+    .creeper-awman {
+        width:20%;
+    }
+
+    /* blogs */
+
+    .blogs {
+        width: 90%;
+
+        grid-template-areas:
+            "header header header"
+            " side1 side1 side1"
+            " side2 side2 side2" ;
+           
+    }
+
+    .blogs-header,.blogs-side1,.blogs-side2 {
+        padding-top:185px;
+    }
+
+
+    /* store-container */
+    
+    .store-container {
+        width:90%;
+    }
+
+    .store-navigation {
+       display: none;
+    }
+
+    /* newyear-promo */
+
+    .newyear-promo {
+        padding:25px;
+    }
+    
+    .promotion-image {
+       display: none;
+    }
+
+    .newyear-promo p:not(.date) {
+        display: none;
+    }
+    
+    .newyear-promo h2 {
+      position: static;
+    }
+    
+    .newyear-promo .date {
+      position: static;
+    }
+
+
+    /* showstore */
+    .showstore-container {
+        width:80%;
+    }
+    
+    .showstore-container img {
+        width:50%;
+    }
+
+    .showstore-container p {
+        padding:38px;
+     }
+    
+ }
+
+ @media screen and (max-width:695px) {
+
+    /* .lead */
+    .content-container .lead {
+        display: none;
+    }
+
+    .content-image {
+        width:118%;
+    }
+
+    /* tab-1-content */
+    #tab-1-content .container{
+       
+        display: -webkit-box;
+       
+        display: -ms-flexbox;
+       
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+       
+    }
+
+    div.description {
+        -ms-flex-item-align: start;
+            align-self: flex-start;
+    }
+
+    div.description ul {
+        font-size:2.4rem;
+    }
+    
+     #tab-1-content div.image {
+        margin-right: 0;
+        
+    }
+    
+    div.description p.description-lead {
+        display: none;
+    }
+
+    /* tab-2-content */
+
+    .rank-table {
+         
+        margin:48px auto;
+        width: 90%;
+        height: 65vh;
+        
+        font-size: 1rem;
+        
+    }
+    
+    .rank-table td {
+        width: 20%; 
+        height: 13vh;
+    }
+
+    /* */
+    .main-cards {
+        width:90%;
+    }
+
+    /* form-container */
+
+    .form-container {
+        width:65%;
+       
+    }
+
+    .form-container p {
+        font-size:0.9rem;
+    }
+
+    .register-link {
+        font-size:inherit;
+    }
+
+    /* minigame */
+
+    .minigame {
+        background-color: #ddd;
+        padding: 28px 50px;
+
+        clip-path:polygon( 0 0  ,4% 0,4% 2%, 17% 2% ,17% 6%,21% 6%,21% 0,  24% 0,24% 3%,31% 3%,31% 0,  37% 0, 37% 2%,45% 2%,45% 0,52% 0,52% 4%,64% 4%,64% 0  ,100% 0,100% 100%,0 100%);
+    }
+
+    .community-content {
+        width:85%;
+    }
+
+    .community-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .creeper-awman {
+        width:25%;
+    }
+
+    #imageof-hope {
+        order:0;
+    }
+      
+ }
+
+ @media screen and (max-width:594px) {
+
+    /* header-content button */
+    .content-container .btn:hover span {
+        margin-right: 15px;
+    }
+
+    /* header 3 content, subscribetion */
+    .promotion{    
+        font-size: 1.85rem;
+    }
+
+    div.tabs {
+        padding:0;
+         
+    }
+
+    .tab .tab-icon{
+         
+        font-size: 4rem;
+        margin-bottom: 10px;
+     }
+    
+    /* content image */
+    .content-image {
+        width:145%;
+        margin-bottom: 55px;
+    } 
+
+    /* button */
+    .content-container .btn{
+        font-size:0.9rem;
+    }
+
+    .content-container .btn:hover span {
+        margin-right:0;
+    }
+
+    /* rank promotion  */
+    section.rank-promotion p {
+        display: none;
+    }
+
+    /* video promotion */
+
+    .video-container iframe {
+        width:380px;
+        height:340px;
+        display: none;
+    }
+    
+    /* */
+
+    .card-cell {
+        width: 90%;  
+    }
+
+
+
+     /* minigame */
+
+    /* minigame */
+
+    .minigame {
+        
+        padding: 48px 50px;
+
+        clip-path:polygon( 0 0  ,0 0,0 2%, 15% 2% ,15% 4%,25% 4%,25% 0,  28% 0,28% 3%,36% 3%,36% 0,  40% 0, 40% 2%,50% 2%,50% 0,53% 0,53% 4%,62% 4%,62% 0  ,100% 0,100% 100%,0 100%);
+    }
+
+    .creeper-awman {
+        width:35%;
+    }
+
+  
+
+     
+ }

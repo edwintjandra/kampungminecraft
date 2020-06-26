@@ -47,7 +47,7 @@ app.get('/',(req,res)=> {
 // auth routes
 
 app.get('/register',(req,res)=>{
-    res.render('register');
+    res.render('login/register');
 })
 
 app.post('/register',(req,res)=>{
@@ -65,7 +65,7 @@ app.post('/register',(req,res)=>{
 })
 
 app.get('/login',(req,res)=>{
-    res.render('login');
+    res.render('login/login');
 })
 
 app.post('/login',passport.authenticate('local',{
@@ -88,14 +88,14 @@ app.get('/store',(req,res)=>{
             console.log(err);
             res.redirect('/');
         }else {
-            res.render('store',{stores:stores})
+            res.render('store/store',{stores:stores})
         }
     })
     
 })
 
 app.get('/store/new',(req,res)=>{
-    res.render('newstore')
+    res.render('store/newstore')
 })
 
 app.post('/store',(req,res)=>{
@@ -118,7 +118,7 @@ app.get('/store/:id',(req,res)=>{
             console.log(err);
             res.redirect('/store');
         }else {
-            res.render('showstore.ejs',{store:store});
+            res.render('store/showstore',{store:store});
         }
 
     })

@@ -1,0 +1,160 @@
+@import url("./lib/header.css");
+@import url("./lib/burger.css");
+@import url("./lib/tabs.css");
+@import url("./lib/video-section.css");
+@import url("./lib/etc.css");
+@import url("./lib/flickity.css");
+@import url("./lib/form.css");
+
+:root {
+    --main-color:#ddd;
+    --main-bg-color:rgb(48, 47, 47);
+    --main-text-color:rgb(255,175,2);
+    --secondary-bg-color:rgb(24, 24, 24);
+}
+
+ 
+
+.btn {
+    --btn-primary-color:rgb(255, 175, 2);
+    --btn-secondary-color:rgb(255, 72, 0);
+    --btn-login-color:rgb(255, 49, 49);
+    --btn-sm-size:1;
+    --btn-md-size:2;
+    --btn-lg-size:3;
+}
+
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    color:var(--main-color);
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--main-bg-color);
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    color:white;
+    text-decoration:none;
+    font-size:19.2px;
+    font-size:1.2rem;
+}
+
+
+/* footer */
+
+footer {
+   background-color: #ddd;
+   height: 68vh;
+
+   display: flex;
+   flex-direction: column;
+ 
+}
+
+footer .social-media {
+    margin:50px auto;
+    text-align: center;
+    color:var(--secondary-bg-color);
+}
+
+.social-media h3 {
+    font-size: 3.5rem;
+}
+
+.links a {
+    color:inherit;
+    font-size: 2rem;
+}
+
+footer .footer-sentence{
+    color:#ddd;
+    justify-self: flex-end;  
+
+    text-align: center;
+    height: 10vh;
+    background-color: var(--secondary-bg-color);
+    
+    display: -ms-grid;
+    
+    display: grid;
+    place-content: center;
+
+    margin-top:auto;
+ 
+}
+
+  /* custom properties */
+
+.btn {
+    border-radius: 12px;
+    padding:15px;
+    margin:10px;
+    margin-top:25px;
+
+    outline:none;
+    border:none;
+    cursor: pointer;
+    color:white;
+}
+
+.btn-sm {
+    font-size:calc(var(--btn-sm-size)*1rem);
+    
+}
+
+.btn-md {
+    font-size:calc(var(--btn-md-size)*1rem); 
+
+}
+
+.btn-lg {
+    font-size:calc(var(--btn-lg-size)*1rem);
+
+}
+
+
+.btn-primary {
+    background-color: var(--btn-primary-color);
+
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-color);
+}
+
+.btn-login {
+    background-color: var(--btn-login-color);
+    font-size:0.8rem;
+    padding:10px;
+    border-radius: 6px;
+}
+
+.btn-login a{
+    font-size: 0.8rem;
+}
+
+ 
+
+
+@import url("./lib/responsive.css");
+
+
+
+
+
+
+
+
+
+
+
+ 
