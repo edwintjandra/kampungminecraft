@@ -1,5 +1,6 @@
 var express                 =require('express'),
     bodyParser              =require('body-parser'),
+    methodOverride          =require('method-override'),
     mongoose                =require('mongoose'),
     passport                =require('passport'),
     localStrategy           =require("passport-local"),
@@ -9,13 +10,13 @@ var express                 =require('express'),
 
 var User=require('./models/user');    
 var Store=require('./models/store');
-const store = require('./models/store');
 
-    
+
 mongoose.connect('mongodb://localhost:27017/kampungmc', {useNewUrlParser: true, useUnifiedTopology: true});
 app.set('view engine','ejs')
 app.use(express.static(__dirname+'/public'))
 
+app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(expressSession({
     secret:"corona is a bir",
@@ -83,7 +84,7 @@ app.get('/logout',(req,res)=>{
 
 app.get('/store',(req,res)=>{
 
-    store.find({},(err,stores)=>{
+    Store.find({},(err,stores)=>{
         if(err){
             console.log(err);
             res.redirect('/');
@@ -95,12 +96,12 @@ app.get('/store',(req,res)=>{
 })
 
 app.get('/store/new',(req,res)=>{
-    res.render('store/newstore')
+    res.render('store/new')
 })
 
 app.post('/store',(req,res)=>{
 
-    store.create(req.body.store,(err,store)=>{
+    Store.create(req.body.store,(err,store)=>{
         if(err) {
             console.log(err);
             res.redirect('/');
@@ -112,18 +113,58 @@ app.post('/store',(req,res)=>{
 })
 
 app.get('/store/:id',(req,res)=>{
-    store.findById(req.params.id,(err,store)=>{
+    Store.findById(req.params.id,(err,store)=>{
 
         if(err){
             console.log(err);
             res.redirect('/store');
         }else {
-            res.render('store/showstore',{store:store});
+            res.render('store/show',{store:store});
         }
 
     })
 })
 
+
+app.get('/store/:id/edit',(req,res)=>{
+
+    Store.findById(req.params.id,(err,store)=>{
+
+        if(err) {
+            console.log(err);
+            res.redirect('/store');
+        } else {
+            res.render('store/edit',{store:store}); 
+        }
+
+
+    })
+})
+
+app.put('/store/:id',(req,res)=>{
+    
+    Store.findByIdAndUpdate(req.params.id,req.body.store,(err,store)=>{
+        if(err){
+            console.log(err);
+            res.redirect('/store/'+store._id);
+        }else {
+            res.redirect('/store/'+store._id);
+        }
+    })
+})
+
+app.delete('/store/:id',(req,res)=>{
+
+    Store.findByIdAndRemove(req.params.id,(err)=>{
+        if(err){
+            console.log(err);
+            res.redirect('/store');
+        }else {
+            res.redirect('/store');
+        }
+
+    })
+})
 
 
 

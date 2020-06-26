@@ -247,6 +247,10 @@
    border-radius:5px; 
 }
 
+.showstore-container a {
+    font-size:1rem;
+}
+
 .showstore-container img {
    width:40%;
 }

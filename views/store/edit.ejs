@@ -1,0 +1,25 @@
+<%- include("../partials/header") %>
+
+<div class="form-container">
+    <h1>edit <%= store.name %></h1>
+
+
+    <form action="/store/<%= store._id %>?_method=PUT" method="POST">
+        <label for="name">name</label>
+        <input type="text" name="store[name]" id="name" value="<%= store.name %>">
+    
+        <label for="image">image</label>
+        <input type="text" name="store[image]" id="image" value="<%= store.image %>">
+    
+        <label for="price">price</label>
+        <input type="text" name="store[price]" id="price" value="<%= store.price %>">
+    
+        <label for="description">description</label>
+        <textarea name="store[description]" id="description" cols="30" rows="10"> <%= store.description %> </textarea>
+    
+        <button class="btn btn-secondary btn-sm">submit</button>
+    </form>
+
+</div>
+
+<%- include("../partials/footer") %>

@@ -9,9 +9,11 @@
     <p>
         <%= store.description %>
     </p>
-    
-   
+
+
+    <a href="/store/<%= store._id %>/edit" class="btn btn-secondary">Edit</a>
     <a href="#" class="btn btn-secondary"> BUY!</a>
+    <form action="/store/<%= store._id %>?_method=DELETE" method="POST" style="display: inline;"><button class="btn btn-secondary btn-sm">Delete</button></form>
  
    
 
