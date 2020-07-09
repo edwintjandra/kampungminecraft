@@ -19,7 +19,10 @@
     <div class="store-content">
        <div class="jumbotron">
            <h3> New Year <br/> <span>Discount!</span> </h3>
+
+           <% if(user.role === keys.role.admin) { %>
            <a href="/store/new" class="btn btn-sm btn-primary" style="margin-left:24px;">create</a>
+           <% } %>
        </div>
        
        <!-- should make a grid , display the store cards -->

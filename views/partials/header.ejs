@@ -21,10 +21,10 @@
             <li><a href="/store">Store</a></li>
 
             <% if(user) { %>
-                <li style="border-bottom: 2px solid #ddd; padding-bottom:1px;"><a href="#"><%= user.username %> </a></li>
-                <li> <a href="/logout" class="btn btn-login">logout   </a> </li>
+                <li style="border-bottom: 2px solid #ddd; padding-bottom:1px;"><a href="/profile"><%= user.username %> </a></li>
+                <li> <a href="/auth/logout" class="btn btn-login">logout   </a> </li>
             <% }else { %>
-                <li> <a href="/login" class="btn btn-login">login    </a> </li>
+                <li> <a href="/auth/login" class="btn btn-login">login    </a> </li>
             <% } %>
             
             

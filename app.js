@@ -3,175 +3,42 @@ var express                 =require('express'),
     methodOverride          =require('method-override'),
     mongoose                =require('mongoose'),
     passport                =require('passport'),
-    localStrategy           =require("passport-local"),
-    passportLocalMongoose   =require("passport-local-mongoose"),
-    expressSession          =require("express-session"),
-    app                     =express();
+    app                     =express(); 
 
-var User=require('./models/user');    
-var Store=require('./models/store');
+var keys  =require('./keys'),
+    store =require('./routes/store'),
+    auth  =require('./routes/auth'),
+    index =require('./routes/index');  
 
-
-mongoose.connect('mongodb://localhost:27017/kampungmc', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(keys.mongodb, {useNewUrlParser: true, useUnifiedTopology: true});
 app.set('view engine','ejs')
 app.use(express.static(__dirname+'/public'))
 
-app.use(methodOverride("_method"));
-app.use(bodyParser.urlencoded({extended:true}))
-app.use(expressSession({
-    secret:"corona is a bir",
+app.use(require('express-session')({
+    secret:keys.secret,
     resave:false,
     saveUninitialized:false
 }))
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(methodOverride("_method"));
+app.use(bodyParser.urlencoded({extended:true}))
 
-
-passport.use(new localStrategy(User.authenticate()))
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 //my middleware
 app.use(function(req,res,next){
     res.locals.user=req.user;
+    res.locals.keys=keys;
 
     next();
 })
-
-
-
-app.get('/',(req,res)=> {
-    res.render('index');
  
-})
-
-// auth routes
-
-app.get('/register',(req,res)=>{
-    res.render('login/register');
-})
-
-app.post('/register',(req,res)=>{
-    User.register(new User({username:req.body.username}),req.body.password,(err,user)=>{
-
-        if(err) {
-            return;
-        }
-
-        passport.authenticate('local')(req,res,()=>{
-            res.redirect('/');
-            console.log(req.user)
-        })
-    })
-})
-
-app.get('/login',(req,res)=>{
-    res.render('login/login');
-})
-
-app.post('/login',passport.authenticate('local',{
-    successRedirect:'/',
-    failureRedirect:'/login'
-}),(req,res)=>{})
-
-app.get('/logout',(req,res)=>{
-    req.logout();
-    
-    res.redirect('/');
-})
-
-//store route
-
-app.get('/store',(req,res)=>{
-
-    Store.find({},(err,stores)=>{
-        if(err){
-            console.log(err);
-            res.redirect('/');
-        }else {
-            res.render('store/store',{stores:stores})
-        }
-    })
-    
-})
-
-app.get('/store/new',(req,res)=>{
-    res.render('store/new')
-})
-
-app.post('/store',(req,res)=>{
-
-    Store.create(req.body.store,(err,store)=>{
-        if(err) {
-            console.log(err);
-            res.redirect('/');
-        } else {
-            res.redirect('/store');
-        }
-
-    })
-})
-
-app.get('/store/:id',(req,res)=>{
-    Store.findById(req.params.id,(err,store)=>{
-
-        if(err){
-            console.log(err);
-            res.redirect('/store');
-        }else {
-            res.render('store/show',{store:store});
-        }
-
-    })
-})
-
-
-app.get('/store/:id/edit',(req,res)=>{
-
-    Store.findById(req.params.id,(err,store)=>{
-
-        if(err) {
-            console.log(err);
-            res.redirect('/store');
-        } else {
-            res.render('store/edit',{store:store}); 
-        }
-
-
-    })
-})
-
-app.put('/store/:id',(req,res)=>{
-    
-    Store.findByIdAndUpdate(req.params.id,req.body.store,(err,store)=>{
-        if(err){
-            console.log(err);
-            res.redirect('/store/'+store._id);
-        }else {
-            res.redirect('/store/'+store._id);
-        }
-    })
-})
-
-app.delete('/store/:id',(req,res)=>{
-
-    Store.findByIdAndRemove(req.params.id,(err)=>{
-        if(err){
-            console.log(err);
-            res.redirect('/store');
-        }else {
-            res.redirect('/store');
-        }
-
-    })
-})
+app.use('/store',store);
+app.use('/auth',auth);
+app.use(index);
 
 
 
-app.get('*',(req,res)=>{
-
-    res.send("under construction....")
-})
 
 app.listen(3000, ()=>{
     console.log('server started');

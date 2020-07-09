@@ -1,0 +1,14 @@
+<%- include("./partials/header") %>
+
+
+<div style="text-align: center; margin:65px 0;">
+    <h1>PROFILE</h1>
+    <p>username:<%= user.username %></p>
+    <p>role:<%= user.role %></p>
+    
+    <img src="<%= user.profileImage %>" alt="user profile" style="width:50%">
+    <br>
+    <a href="/" style="color:aqua; border-bottom:2px solid aqua; padding:2px;">go back</a>
+</div>
+
+<%- include("./partials/footer") %>
