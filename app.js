@@ -36,10 +36,9 @@ app.use(function(req,res,next){
 app.use('/store',store);
 app.use('/auth',auth);
 app.use(index);
+ 
 
 
-
-
-app.listen(3000, ()=>{
+app.listen(process.env.PORT||3000, ()=>{
     console.log('server started');
 })
