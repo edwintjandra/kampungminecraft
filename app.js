@@ -8,9 +8,9 @@ var express                 =require('express'),
 var keys  =require('./keys'),
     store =require('./routes/store'),
     auth  =require('./routes/auth'),
-    index =require('./routes/index');  
+    index =require('./routes/index');      
 
-mongoose.connect(keys.mongodb, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.BASEURL||"mongodb://localhost:27017/kampungmc", {useNewUrlParser: true, useUnifiedTopology: true});
 app.set('view engine','ejs')
 app.use(express.static(__dirname+'/public'))
 
